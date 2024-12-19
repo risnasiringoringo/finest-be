@@ -1,13 +1,13 @@
-const sql = require('mysql2/promise')
+const mysql = require('mysql2/promise')
 const dotenv = require('dotenv')
 
 dotenv.config()
 
-const db = sql.createPool({
-    host: mysql.railway.internal,
-    user: root,
-    password: PPZYYBtlQkSjNPBjVvNxeFxMNeQCRAaK,
-    database: railway
+const db = mysql.createPool({
+    host: "mysql.railway.internal",
+    user: "root",
+    password: "PPZYYBtlQkSjNPBjVvNxeFxMNeQCRAaK",
+    database: "railway"
 })
 
 async function testconnection() {
