@@ -4,6 +4,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
+    "postinstall": "npm install -g nodemon", 
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
