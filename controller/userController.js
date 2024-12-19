@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { User } = require("../models"); 
+const { User } = require("../models");
 
 exports.registerUser = async (req, res) => {
   try {
@@ -52,14 +52,14 @@ exports.loginUser = async (req, res) => {
       { userId: user.id, roleId: user.role_id },
       "your-secret-key",
       {
-        expiresIn: "1h", 
+        expiresIn: "1h",
       }
     );
 
     res.status(200).json({
       message: "Login successful",
       token,
-      first_name: user.first_name, 
+      first_name: user.first_name,
     });
   } catch (error) {
     console.error(error);
