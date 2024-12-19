@@ -3,11 +3,11 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const db=mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE
+const db = mysql.createPool({
+    host: mysql.railway.internal,
+    user: root,
+    password: PPZYYBtlQkSjNPBjVvNxeFxMNeQCRAaK,
+    database: railway
 })
 
 async function testconnection() {
@@ -21,11 +21,11 @@ async function testconnection() {
 
 async function query(command, value) {
     try {
-        const [value]=await db.query(command, value ?? [])
+        const [value] = await db.query(command, value ?? [])
         return value
     } catch (error) {
         console.log(error)
     }
 }
 
-module.exports = {testconnection,query}
+module.exports = { testconnection, query }
